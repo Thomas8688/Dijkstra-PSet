@@ -40,14 +40,14 @@ class graph:
 #The method used to correctly display the shortest routes is called
         self.displayShortest(startV)
 
-#Method to carry out the core purpose of dijkstra's algorithm
+#Method to carry out the core process of dijkstra's algorithm
     def dijkstra(self, curr, new, vert):
 #Using the 2d array self.__matrix, first the weight from the matrix is taken for the current values
-#If the weight exists, and the item has not been checked yet the main portion of dijkstras algorithm is called
+#If the weight exists, and the item has not been checked yet the main portion of dijkstras algorithm is completed
         if self.__matrix[curr][new] != "0" and self.__finished[new] != True:
 #Checks if the weight to the previous item added to the new weight is smaller than the current weight
             if self.__dists[curr] + int(self.__matrix[curr][new]) < self.__dists[new]:
-#If so, the current weight is replaced with the weight to the previous weight added to the new weight
+#If so, the current weight is replaced with the weight to the previous vertex added to the new weight
                 self.__dists[new] = self.__dists[curr] + int(self.__matrix[curr][new])
 #and the current previous item is replaced with the current item
                 self.__prev[new] = vert
